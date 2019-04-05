@@ -279,3 +279,54 @@ body>.jcf-select-drop.jcf-drop-flipped {
 	border-bottom-left-radius: 8px;
 }
 .jcf-list-content .jcf-option-hideme{display: none;}
+
+
+.events{
+	&__list{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		&-item{
+			display: flex;
+			flex-flow: row nowrap;
+			&__img{
+				position: relative;
+				display: block;
+				overflow: hidden;
+				width: 215px;
+				img{
+					display: block;
+					width: 100%;
+				}
+			}
+			&__descr{
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				padding: 12px 24px 12px 38px;
+				color: $tundora;
+				background: $porcelain;
+			}
+			&__age{
+				display: block;
+			}
+			&__address{
+				display: block;
+				font-style: normal;
+			}
+			&__people{
+				display: block;
+				.status{
+					display: inline-block;
+					vertical-align: top;
+					&_avaliable{
+						color: $bondi_blue;
+					}
+					&_sold-out{
+						color: $orange;
+					}
+				}
+			}
+		}
+	}
+}
