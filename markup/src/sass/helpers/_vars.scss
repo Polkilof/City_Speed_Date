@@ -1,0 +1,58 @@
+// vars
+$fonts: '../fonts/';
+$images: '../images/';
+
+// fonts
+$Montserrat: 'Montserrat', sans-serif;;
+
+$breakpoints: (
+	phone-xs: 375px,
+	phone: 768px,
+	tablet: 992px,
+	desktop: 1200px,
+	desktop_lg: 1400px,
+);
+
+// font settings
+$grid-gutter-width: 16px;
+$container-large-desktop: 1080px;
+
+$font-family-base: $Montserrat;
+$font-size-base: 16px;
+$line-height-base: 1.25;
+$font-size-h1: 50px;
+$font-size-h2: 36px;
+$font-size-h3: 25px;
+$font-size-h4: 24px;
+
+$paragraph-spacing: 0 0 15px;
+
+$hover-opacity: 0.8;
+$time-animation: 0.3s;
+
+// colors
+$white: #fff;
+$black: #000;
+$gray: #333;
+
+$gray2: #383838;
+
+$dusty-gray: #676767;
+$saffron: #F9C63A;
+$picton_blue: #3ab1d0;
+$silver: #a8a8a8;
+$cod_gray: #1b1b1b;
+$orange: #ff6600;
+
+
+$base-color: $cod_gray;
+$body-bg: $white;
+
+$link-color: $cod_gray;
+
+$btn-color: $black;
+$btn-border-radius-base: 8px;
+$btn-font-size: 16px;
+$btn-line-height: 18px;
+$btn-font-weight: 400;
+$btn-min-width: 205px;

@@ -1,0 +1,66 @@
+/* buttons */
+.btn{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid transparent;
+	text-align: center;
+	border-radius: $btn-border-radius-base;
+	font-weight: $btn-font-weight;
+	font-size: $btn-font-size;
+	line-height: $btn-line-height;
+	padding: 11px 20px;
+	color: $btn-color;
+	min-width: 134px;
+	cursor: pointer;
+	transition: background .3s, color .3s, border-color .3s;
+	@include media("<phone"){
+		font-size: 14px;
+		line-height: 18px;
+		padding: 8px 20px;
+		color: #fff;
+		min-width: 104px;
+	}
+	&_med{
+		font-weight: 500;
+	}
+	&.active:focus,
+	&.active:hover,
+	&:focus,
+	&:active,
+	&:hover{
+		box-shadow: none;
+		outline: none;
+	}
+	&_primary{
+		color: $white;
+		background: $picton_blue;
+		border: 2px solid $picton_blue;
+		&:hover{
+			color: $picton_blue;
+			background: $white;
+			border-color: $picton_blue;
+		}
+		&:active{
+			color: $picton_blue;
+			background: $white;
+			border-color: $picton_blue;
+		}
+	}
+	&_info{
+		color: $gray2;
+		background: $silver;
+		border: 2px solid $silver;
+		&:hover{
+			color: $picton_blue;
+			background: $white;
+			border-color: $white;
+		}
+		&:active{
+			color: $picton_blue;
+			background: $white;
+			border-color: $white;
+		}
+	}
+}
+/*end btn*/

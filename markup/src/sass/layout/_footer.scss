@@ -1,0 +1,167 @@
+/* footer */
+.footer-page{
+	position: relative;
+	background: $gray2;
+	padding: 78px 0;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 500;
+	color: $silver;
+	@include media("<tablet"){
+		font-size: 14px;
+		padding: 32px 0 40px;
+	}
+	@include media("<phone"){
+		font-size: 12px;
+		line-height: 18px;
+	}
+	> .container{
+		max-width: 1132px;
+	}
+	.row{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		margin: 0 -10px;
+		@include media("<tablet"){
+			justify-content: space-around;
+		}
+		@include media("<phone"){
+			flex-flow: column;
+		}
+		.col {
+			width: auto;
+			padding: 0 10px 24px;
+			&:last-child{
+				padding-bottom: 0;
+			}
+		}
+	}
+	.logo{
+		float: none;
+		display: block;
+		width: 234px;
+		height: 35px;
+		background: url('#{$images}logo_footer.png') no-repeat 50% 50%;
+		background-size: 100% auto;
+		margin-bottom: 40px;
+		margin-top: -10px;
+		@include media("<desktop"){
+			width: 190px;
+			height: 35px;
+		}
+		@include media("<phone"){
+			width: 160px;
+			height: 26px;
+			margin-top: 0;
+			margin-bottom: 20px;
+		}
+	}
+	&__title{
+		display: block;
+		margin-bottom: 10px;
+	}
+}
+
+.footer-links{
+	&__list{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		column-count: 2;
+		column-gap: 40px;
+		display: inline-block;
+		vertical-align: top;
+		@include media("<phone"){
+			display: block;
+		}
+	}
+	&__item{
+		display: block;
+		margin-bottom: 14px;
+	}
+	&__link{
+		display: inline-block;
+		vertical-align: top;
+		color: $silver;
+		letter-spacing: 0.2px;
+		transition: color .2s;
+		&:hover{
+			color: $white;
+		}
+	}
+}
+
+.socials{
+	margin: 0 -6px;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-flow: row nowrap;
+	&__item{
+		display: block;
+		padding: 0 6px;
+	}
+	&__link{
+		display: block;
+		font-size: 22px;
+		line-height: 1;
+		color: $silver;
+		transition: color .2s;
+		&:hover{
+			color: $picton_blue;
+		}
+		&:active{
+			color: $picton_blue;
+		}
+		i{
+			display: block;
+		}
+	}
+}
+
+.form_subscribe{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	.form__control{
+		display: inline-block;
+		vertical-align: top;
+		max-width: 326px;
+		width: 100%;
+		height: 44px;
+		padding: 5px 12px;
+		padding-right: 144px;
+		color: $white;
+		font-size: 14px;
+		line-height: 20px;
+		font-weight: 500;
+		background-color: transparent;
+		border: 2px solid $silver;
+		border-radius: 8px;
+		@include media("<phone"){
+			max-width: 280px;
+			padding-right: 114px;
+			max-width: 100%;
+			height: 38px;
+		}
+		&:focus{
+			border-color: $picton_blue;
+			outline: none;
+		}
+		&::-moz-placeholder{
+			color: $silver;
+			opacity: 1;
+		}
+		&:-ms-input-placeholder {color: $silver;}
+		&::-webkit-input-placeholder {color: $silver;}
+	}
+	.btn{
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
