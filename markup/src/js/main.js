@@ -199,9 +199,9 @@ $(function() {
 		dots:false,
 		cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)"
 	});
+	$(window).on("resize.slickVideoPlayer", function(){
+		resizePlayer(iframes, 16/9);
+	});
 });
 
 // Resize event
-$(window).on("resize.slickVideoPlayer", function(){
-	resizePlayer(iframes, 16/9);
-});

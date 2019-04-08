@@ -1,7 +1,7 @@
 .visual{
 	position: relative;
 	height: 48vw;
-	min-height: 8vw;
+	min-height: 490px;
 	display: flex;
 	flex-flow: column;
 	padding-bottom: calc(48vw / 6);
@@ -75,6 +75,12 @@
 	&.slick-initialized{
 		opacity: 1;
 		visibility: visible;
+	}
+	.slick-track{
+		height: 100%;
+	}
+	.slick-list{
+		height: 100%;
 	}
 	&__item{
 		position: relative;
@@ -282,18 +288,24 @@ body>.jcf-select-drop.jcf-drop-flipped {
 
 
 .events{
+	padding: 70px 0;
 	&__list{
 		margin: 0;
 		padding: 0;
 		list-style: none;
 		&-item{
 			display: flex;
-			flex-flow: row nowrap;
+			flex-flow: row wrap;
+			justify-content: flex-end;
+			margin-bottom: 90px;
+			&:last-child{
+				margin-bottom: 0;
+			}
 			&__img{
 				position: relative;
 				display: block;
 				overflow: hidden;
-				width: 215px;
+				min-width: 215px;
 				img{
 					display: block;
 					width: 100%;
@@ -303,6 +315,7 @@ body>.jcf-select-drop.jcf-drop-flipped {
 				display: flex;
 				flex-flow: column;
 				justify-content: center;
+				flex: 1 0 330px;
 				padding: 12px 24px 12px 38px;
 				color: $tundora;
 				background: $porcelain;
@@ -326,6 +339,70 @@ body>.jcf-select-drop.jcf-drop-flipped {
 						color: $orange;
 					}
 				}
+			}
+
+
+			&__info{
+				width: 274px;
+				padding: 12px 0 24px 24px;
+				display: flex;
+				flex-flow: column;
+				justify-content: flex-end;
+			}
+			&__prices{
+				display: block;
+				text-align: right;
+				margin-bottom: 20px;
+				font-size: 18px;
+				line-height: 1;
+			}
+			&__old-price{
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				color: #9e9299;
+				padding: 0 3px;
+				margin-right: 5px;
+				&:after{
+					content: "";
+					position: absolute;
+					top: 50%;
+					left: 0;
+					right: 0;
+					transform: translate(0, -50%);
+					height: 1px;
+					background: #9e9299;
+				}
+			}
+			&__price{
+				display: inline-block;
+				vertical-align: top;
+				color: $picton_blue;
+			}
+			&__to-book{
+				position: relative;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				height: 44px;
+				border: 2px solid $picton_blue;
+				border-radius: 8px;
+				padding-right: 158px;
+				.btn{
+					text-transform: uppercase;
+					position: absolute;
+					top: -2px;
+					right: -2px;
+					min-width: 160px;
+				}
+			}
+			&__date{
+				width: 100%;
+				text-align: center;
+				color: $picton_blue;
+				text-transform: uppercase;
+				padding: 0 14px;
+				white-space: nowrap;
 			}
 		}
 	}
