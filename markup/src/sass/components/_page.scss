@@ -25,6 +25,11 @@
 			text-transform: uppercase;
 			text-shadow: 0 3px 0 rgba($black, .15);
 			margin-bottom: 16px;
+			@include media("<phone"){
+				font-size: 26px;
+				line-height: 32px;
+				margin-bottom: 8px;
+			}
 		}
 		&-subtitle{
 			display: block;
@@ -36,15 +41,32 @@
 			text-transform: uppercase;
 			text-shadow: 0 3px 0 rgba($black, .15);
 			margin-bottom: 20px;
+			@include media("<phone"){
+				font-size: 16px;
+				line-height: 24px;
+				margin-bottom: 12px;
+			}
 		}
 		&-select{
 			min-width: 462px;
+			@include media("<500px"){
+				min-width: 340px;
+			}
+			@include media("<phone-xs"){
+				min-width: 100%;
+				width: 100%;
+			}
 		}
 		.btn_primary{
 			text-transform: uppercase;
 			min-width: 190px;
 			padding-top: 16px;
 			padding-bottom: 16px;
+			@include media("<phone"){
+				padding-top: 12px;
+				padding-bottom: 12px;
+				min-width: 150px;
+			}
 		}
 	}
 }
@@ -178,7 +200,7 @@
 	color: $silver;
 	min-width: 145px;
 	@include media("<phone"){
-		height: 40px;
+		height: 46px;
 	}
 }
 .jcf-select .jcf-select-opener{
@@ -202,6 +224,10 @@
 	border-color: $silver;
 	transform: translate(0, -50%) rotate(225deg);
 	transition: all .3s ease-in-out;
+	@include media("<phone"){
+		right: calc(12px + 150px);
+	}
+
 }
 .jcf-select.jcf-drop-active .jcf-select-opener:before{
 	border-color: $picton_blue;
@@ -224,7 +250,8 @@
 	padding: 15px 20px;
 	@include media("<phone"){
 		font-size: 14px;
-		padding: 9px 16px;
+		padding: 11px 16px;
+		margin: 0 160px 0 0;
 	}
 }
 .jcf-select-drop .jcf-select-drop-content{
@@ -246,6 +273,10 @@
 	color: $silver;
 	letter-spacing: 0;
 	width: 100%;
+	@include media("<phone"){
+		font-size: 14px;
+		line-height: 18px;
+	}
 	.jcf-option{
 		white-space: nowrap;
 		overflow: hidden;
@@ -289,15 +320,27 @@ body>.jcf-select-drop.jcf-drop-flipped {
 
 .events{
 	padding: 70px 0;
+	@include media("<phone"){
+		padding: 30px 0;
+	}
 	&__list{
 		margin: 0;
-		padding: 0;
+		padding: 30px 0 0;
 		list-style: none;
+		@include media("<phone"){
+			padding: 0;
+		}
 		&-item{
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: flex-end;
-			margin-bottom: 90px;
+			margin-bottom: 86px;
+			@include media("<tablet"){
+				margin-bottom: 44px;
+			}
+			@include media("<phone"){
+				margin-bottom: 28px;
+			}
 			&:last-child{
 				margin-bottom: 0;
 			}
@@ -306,9 +349,31 @@ body>.jcf-select-drop.jcf-drop-flipped {
 				display: block;
 				overflow: hidden;
 				min-width: 215px;
+				@include media("<580px"){
+					width: 100%;
+				}
 				img{
 					display: block;
 					width: 100%;
+				}
+				.sale{
+					position: absolute;
+					top: 21%;
+					left: -22%;
+					transform: translate(0, 0) rotate(-45deg);
+					width: 100%;
+					display: block;
+					font-size: 12px;
+					line-height: 24px;
+					font-weight: 400;
+					text-align: center;
+					color: $black;
+					background: $yellow;
+					@include media("<580px"){
+						top: 16%;
+						left: -28%;
+						line-height: 34px;
+					}
 				}
 			}
 			&__descr{
@@ -319,16 +384,31 @@ body>.jcf-select-drop.jcf-drop-flipped {
 				padding: 12px 24px 12px 38px;
 				color: $tundora;
 				background: $porcelain;
+				@include media("<phone"){
+					padding: 12px 12px 12px 12px;
+					flex: 1 0 230px;
+				}
 			}
 			&__age{
 				display: block;
+				margin-bottom: 12px;
+				@include media("<phone"){
+					margin-bottom: 8px;
+				}
 			}
 			&__address{
 				display: block;
 				font-style: normal;
+				margin-bottom: 16px;
+				@include media("<phone"){
+					margin-bottom: 8px;
+				}
 			}
 			&__people{
 				display: block;
+				+ .events__list-item__people{
+					margin-top: 4px;
+				}
 				.status{
 					display: inline-block;
 					vertical-align: top;
@@ -340,8 +420,6 @@ body>.jcf-select-drop.jcf-drop-flipped {
 					}
 				}
 			}
-
-
 			&__info{
 				width: 274px;
 				padding: 12px 0 24px 24px;
@@ -355,6 +433,10 @@ body>.jcf-select-drop.jcf-drop-flipped {
 				margin-bottom: 20px;
 				font-size: 18px;
 				line-height: 1;
+				@include media("<phone"){
+					font-size: 16px;
+					margin-bottom: 12px;
+				}
 			}
 			&__old-price{
 				position: relative;
@@ -388,6 +470,9 @@ body>.jcf-select-drop.jcf-drop-flipped {
 				border: 2px solid $picton_blue;
 				border-radius: 8px;
 				padding-right: 158px;
+				@include media("<phone"){
+					height: 38px;
+				}
 				.btn{
 					text-transform: uppercase;
 					position: absolute;
@@ -398,12 +483,192 @@ body>.jcf-select-drop.jcf-drop-flipped {
 			}
 			&__date{
 				width: 100%;
+				font-size: 18px;
+				line-height: 1;
+				font-weight: 500;
 				text-align: center;
 				color: $picton_blue;
 				text-transform: uppercase;
 				padding: 0 14px;
 				white-space: nowrap;
+				@include media("<phone"){
+					font-size: 14px;
+				}
 			}
 		}
+	}
+}
+
+.info-section{
+	padding: 96px 0;
+	@include media("<phone"){
+		padding: 30px 0;
+	}
+	&__text{
+		display: block;
+		font-size: 18px;
+		line-height: 26px;
+		font-weight: 400;
+		margin-bottom: 16px;
+		@include media("<phone"){
+			margin-bottom: 12px;
+			font-size: 14px;
+			line-height: 22px;
+		}
+		&:last-child{
+			margin-bottom: 0;
+			@include media("<phone"){
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.statistic{
+	padding: 50px 0;
+	margin-bottom: 28px;
+	@include media("<phone"){
+		padding: 30px 0;
+		margin-bottom: 0;
+	}
+	&__list{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		@include media("<phone"){
+			justify-content: center;
+		}
+	}
+	&__item{
+		display: block;
+		padding: 0 40px;
+		@include media("<tablet"){
+			padding: 0 20px;
+		}
+		@include media("<phone"){
+			width: 100%;
+			padding: 0 0 20px;
+		}
+	}
+	&__item-title{
+		display: block;
+		font-size: 88px;
+		line-height: 1.2;
+		color: $picton_blue;
+		font-weight: 800;
+		text-align: center;
+		@include media("<tablet"){
+			font-size: 68px;
+		}
+		@include media("<phone"){
+			font-size: 52px;
+		}
+	}
+	&__item-txt{
+		display: block;
+		font-size: 18px;
+		line-height: 22px;
+		color: $blue_ligt;
+		font-weight: 600;
+		text-transform: uppercase;
+		text-align: center;
+		@include media("<phone"){
+			font-size: 16px;
+			line-height: 20px;
+		}
+	}
+}
+
+.short-description{
+	background: $picton_blue;
+	padding: 55px 0;
+	@include media("<phone"){
+		padding: 30px 0;
+	}
+	&__list{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+	}
+	&__item{
+		padding: 0 30px 30px;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+		@include media("<phone"){
+			padding: 0 10px 32px;
+		}
+	}
+	&__item-img{
+		display: block;
+		max-width: 25%;
+	}
+	&__item-descr{
+		display: block;
+		padding-top: 24px;
+		padding-left: 24px;
+		@include media("<phone"){
+			padding-left: 20px;
+			padding-top: 12px;
+		}
+	}
+	&__item-title{
+		display: block;
+		font-size: 20px;
+		line-height: 24px;
+		color: $white;
+		font-weight: 600;
+		text-transform: uppercase;
+		@include media("<phone"){
+			font-size: 18px;
+			line-height: 20px;
+		}
+	}
+	&__item-text{
+		display: block;
+		font-size: 16px;
+		line-height: 1.25;
+		color: $white;
+		font-weight: 300;
+		@include media("<phone"){
+			font-size: 14px;
+		}
+	}
+}
+
+.partners{
+	padding: 46px 0;
+	@include media("<phone"){
+		padding: 20px 0;
+	}
+	&__list{
+		margin: 0 -10px;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+		@include media("<phone"){
+			margin: 0 -4px;
+		}
+	}
+	&__item{
+		display: block;
+		padding: 0 10px;
+		@include media("<phone"){
+			padding: 0 4px;
+		}
+	}
+	&__image{
+		display: block;
+		max-width: 100%;
+		max-height: 100%;
 	}
 }
