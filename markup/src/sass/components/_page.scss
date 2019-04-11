@@ -4,8 +4,14 @@
 	min-height: 490px;
 	display: flex;
 	flex-flow: column;
+	padding-right: 30px;
+	padding-left: 30px;
 	padding-bottom: calc(48vw / 6);
 	overflow: hidden;
+	@include media("<desktop"){
+		padding-right: 15px;
+		padding-left: 15px;
+	}
 	> .container{
 		display: flex;
 		flex-flow: column;
@@ -388,6 +394,9 @@ body>.jcf-select-drop.jcf-drop-flipped {
 					padding: 12px 12px 12px 12px;
 					flex: 1 0 230px;
 				}
+				@include media("<580px"){
+					flex: 1 0 100%;
+				}
 			}
 			&__age{
 				display: block;
@@ -431,7 +440,7 @@ body>.jcf-select-drop.jcf-drop-flipped {
 				display: block;
 				text-align: right;
 				margin-bottom: 20px;
-				font-size: 18px;
+				font-size: 20px;
 				line-height: 1;
 				@include media("<phone"){
 					font-size: 16px;
@@ -483,7 +492,7 @@ body>.jcf-select-drop.jcf-drop-flipped {
 			}
 			&__date{
 				width: 100%;
-				font-size: 18px;
+				font-size: 20px;
 				line-height: 1;
 				font-weight: 500;
 				text-align: center;
@@ -492,7 +501,7 @@ body>.jcf-select-drop.jcf-drop-flipped {
 				padding: 0 14px;
 				white-space: nowrap;
 				@include media("<phone"){
-					font-size: 14px;
+					font-size: 16px;
 				}
 			}
 		}
@@ -607,7 +616,10 @@ body>.jcf-select-drop.jcf-drop-flipped {
 	}
 	&__item-img{
 		display: block;
-		max-width: 25%;
+		max-width: 100%;
+		@include media("<phone"){
+			max-width: 25%;
+		}
 	}
 	&__item-descr{
 		display: block;
