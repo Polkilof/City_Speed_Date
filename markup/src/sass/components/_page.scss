@@ -4,24 +4,16 @@
 	min-height: 490px;
 	display: flex;
 	flex-flow: column;
-	padding-right: 30px;
-	padding-left: 30px;
-	padding-bottom: calc(48vw / 6);
 	overflow: hidden;
-	@include media("<desktop"){
-		padding-right: 15px;
-		padding-left: 15px;
-	}
-	> .container{
-		display: flex;
-		flex-flow: column;
-		justify-content: flex-end;
-		height: 100%;
-	}
 	&__content{
-		position: relative;
+		position: absolute;
+		left: 30px;
+		bottom: calc(48vw / 6);
 		z-index: 500;
 		max-width: 725px;
+		@include media("<desktop"){
+			left: 15px;
+		}
 		&-title{
 			display: block;
 			font-size: 54px;
