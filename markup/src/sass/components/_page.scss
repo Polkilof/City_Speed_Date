@@ -5,6 +5,7 @@
 	display: flex;
 	flex-flow: column;
 	overflow: hidden;
+	background: $gray2;
 	&__content{
 		position: absolute;
 		left: 30px;
