@@ -17,7 +17,7 @@ let gulp = require('gulp'),
 	rigger = require('gulp-rigger'),
 	ghPages = require('gulp-gh-pages');
 
-gulp.task('default', gulpsync.sync(['clean', ['html', 'styles', 'minify', 'js', 'js2', 'fonts', 'images', 'browser', 'watch']]));
+gulp.task('default', gulpsync.sync(['clean', ['html', 'styles', 'minify', 'js', 'js2', 'fonts', 'video', 'images', 'browser', 'watch']]));
 
 gulp.task('browser', () => {
 	browser.init({
@@ -99,6 +99,10 @@ gulp.task('fonts', () => {
 	gulp.src('./src/fonts/**/*.*')
 		.pipe(gulp.dest('public/fonts/'));
 });
+gulp.task('video', () => {
+	gulp.src('./src/video/**/*.*')
+		.pipe(gulp.dest('public/video/'));
+});
 
 gulp.task('watch', () => {
 	// Watch .html files
@@ -116,4 +120,5 @@ gulp.task('watch', () => {
 	gulp.watch('src/images/**/*', ['images', browser.reload]);
 	// Watch .fonts files
 	gulp.watch('src/fonts/**/*.*', ['fonts', browser.reload]);
+	gulp.watch('src/video/**/*.*', ['video', browser.reload]);
 });
