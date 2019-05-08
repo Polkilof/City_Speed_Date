@@ -128,13 +128,26 @@ function playPauseVideo(slick, control){
 	} else if (slideType === "video") {
 		video = currentSlide.children("video").get(0);
 		if (video != null) {
-			if (control === "play"){
+			if (control === "play" && window.innerWidth > 767){
 				video.play();
 			} else {
 				video.pause();
+				$('.control').addClass('pause');
 			}
 		}
+		$('.control').on('click', function(e) {
+			e.preventDefault();
+			if (!$(this).hasClass('pause')){
+				$(this).addClass('pause');
+				video.pause();
+			} else if ($(this).hasClass('pause')){
+				video.play();
+				$(this).removeClass('pause');
+			}
+		});
+
 	}
+
 }
 
 // Resize player
